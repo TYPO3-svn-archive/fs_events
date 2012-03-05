@@ -68,9 +68,17 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
               center: latlng,
               mapTypeId: google.maps.MapTypeId.ROADMAP
             };
-            var map = new google.maps.Map(document.getElementById(elementId), myOptions);
+            eval("if(typeof "+elementId+"_obj == \'undefined\') { " +
+             "var "+elementId+"_obj = new google.maps.Map(document.getElementById(elementId), myOptions);" +
+             " console.log(\'erstellt :)\');" +
+            "} else { " +
+             "console.log(\'gab es schon 0o\'); " +
+            "}");
+            //eval("var "+elementId+"_obj = new google.maps.Map(document.getElementById(elementId), myOptions)");
+            //var map = new google.maps.Map(document.getElementById(elementId), myOptions);
 
-
+//eval("console.log( "+elementId+"_obj );");
+//eval("console.dir( "+elementId+"_obj );");
             //alert("test");
           }
         </script>
