@@ -1,0 +1,62 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Event</h1>
+
+<f:flashMessages />
+
+<table  class="tx_fsevents" >
+	<tr>
+		<th><f:translate key="tx_fsevents_domain_model_event.title" /></th>
+		<th><f:translate key="tx_fsevents_domain_model_event.image" /></th>
+		<th><f:translate key="tx_fsevents_domain_model_event.description" /></th>
+		<th><f:translate key="tx_fsevents_domain_model_event.event_start_date" /></th>
+		<th><f:translate key="tx_fsevents_domain_model_event.event_end_date" /></th>
+		<th><f:translate key="tx_fsevents_domain_model_event.price" /></th>
+		<th><f:translate key="tx_fsevents_domain_model_event.ticket_link" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+</table>
+
+<div id="tx_fsevents_{cObjData.uid}" class="tx_fsevents_list accordion">
+    <f:for each="{events}" as="event">
+        <div id="tx_fsevents_item_{event.uid}" class="item">
+            <div class="col1">
+                {event.eventStartDate -> f:format.date()}<br />
+                - {event.eventEndDate -> f:format.date()}<br />
+                <div class="status">{event.status.title}</div>
+            </div>
+            <div class="col2 open">
+                <h3>{event.location.city} - {event.location.title}</h3>
+                <div class="title">{event.title}</div>
+            </div>
+            <div class="clear"></div>
+            <div class="info">
+                <div class="col1">
+                    {event.image}
+                    {event.price}
+                    {event.description}
+                </div>
+                <div class="col2">
+                    {event.ticketLink}
+                <div id="map_canvas_{event.uid}" class="map_canvas" style="width:100%; height:100px"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </f:for>
+</div>
+<f:link.action action="new">New Event</f:link.action>
+</f:section>

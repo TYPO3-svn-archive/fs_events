@@ -1,0 +1,33 @@
+plugin.tx_fsevents {
+	view {
+		templateRootPath = {$plugin.tx_fsevents.view.templateRootPath}
+		partialRootPath = {$plugin.tx_fsevents.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_fsevents.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_fsevents.persistence.storagePid}
+	}
+}
+
+plugin.tx_fsevents._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-fs-events table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-fs-events table th {
+		font-weight:bold;
+	}
+
+	.tx-fs-events table td {
+		vertical-align:top;
+	}
+
+
+
+)

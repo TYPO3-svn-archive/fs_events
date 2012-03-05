@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_fsevents_domain_model_event</description>
+		<type>CSH</type>
+		<csh_table>tx_fsevents_domain_model_event</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+			<label index="title.description">title</label>
+			<label index="image.description">A logo, flyer or other image of the event.</label>
+			<label index="description.description">description</label>
+			<label index="event_start_date.description">eventStartDate</label>
+			<label index="event_end_date.description">eventEndDate</label>
+			<label index="price.description">price</label>
+			<label index="ticket_link.description">ticketLink</label>
+			<label index="category.description">category</label>
+			<label index="location.description">location</label>
+			<label index="status.description">The event-status</label>
+		</languageKey>
+	</data>
+</T3locallang>

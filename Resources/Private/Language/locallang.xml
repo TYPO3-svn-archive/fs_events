@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Events extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_fsevents_domain_model_category">Category for events</label>
+			<label index="tx_fsevents_domain_model_category.title">title</label>
+			<label index="tx_fsevents_domain_model_category.description">description</label>
+			<label index="tx_fsevents_domain_model_category.image">The category-image</label>
+			<label index="tx_fsevents_domain_model_event">Event</label>
+			<label index="tx_fsevents_domain_model_event.title">title</label>
+			<label index="tx_fsevents_domain_model_event.image">A logo, flyer or other image of the event.</label>
+			<label index="tx_fsevents_domain_model_event.description">description</label>
+			<label index="tx_fsevents_domain_model_event.event_start_date">eventStartDate</label>
+			<label index="tx_fsevents_domain_model_event.event_end_date">eventEndDate</label>
+			<label index="tx_fsevents_domain_model_event.price">price</label>
+			<label index="tx_fsevents_domain_model_event.ticket_link">ticketLink</label>
+			<label index="tx_fsevents_domain_model_event.category">category</label>
+			<label index="tx_fsevents_domain_model_event.location">location</label>
+			<label index="tx_fsevents_domain_model_event.status">The event-status</label>
+			<label index="tx_fsevents_domain_model_location">Location</label>
+			<label index="tx_fsevents_domain_model_location.title">The name of the location.</label>
+			<label index="tx_fsevents_domain_model_location.description">Some text about the location.</label>
+			<label index="tx_fsevents_domain_model_location.address">Street an No </label>
+			<label index="tx_fsevents_domain_model_location.zip">Postalcode of the location</label>
+			<label index="tx_fsevents_domain_model_location.city">City of the location</label>
+			<label index="tx_fsevents_domain_model_location.country">Country of the location.</label>
+			<label index="tx_fsevents_domain_model_location.latitude">Latitude for maps.</label>
+			<label index="tx_fsevents_domain_model_location.longitude">Longitude for maps.</label>
+			<label index="tx_fsevents_domain_model_location.image">Tho logo or image of the location.</label>
+			<label index="tx_fsevents_domain_model_status">Staus for a event</label>
+			<label index="tx_fsevents_domain_model_status.title">The title of the staus</label>
+			<label index="tx_fsevents_domain_model_status.description">A short description of the status</label>
+			<label index="tx_fsevents_domain_model_status.icon">A status-icon</label>
+		</languageKey>
+	</data>
+</T3locallang>
