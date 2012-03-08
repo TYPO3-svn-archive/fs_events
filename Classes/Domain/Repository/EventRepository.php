@@ -32,6 +32,55 @@
  *
  */
 class Tx_FsEvents_Domain_Repository_EventRepository extends Tx_Extbase_Persistence_Repository {
+    /**
+     *
+     * @param array $arguments
+     * @param integer $limit
+     * @return type
+     */
+    public function findAll(array $arguments = array(), $limit = NULL) {
+        $query = $this->createQuery();
+        $constraint = $this->handleArguments($query, $arguments);
+        if($constraint) {
+            $query->matching($constraint);
+        }
+        #$this->handleOrdering($query, $arguments);
+        $query->setOrderings(array('eventStartDate' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+        if($limit) {
+            $query->setLimit($limit);
+        }
+        return $query->execute();
+    }
 
+    protected function handleArguments(Tx_Extbase_Persistence_Query $query, array $arguments = array()) {
+        $constraint = NULL;
+        $constraints = array();
+
+        #if($parentConstraint) {
+        #    $constraints[] = $parentConstraint;
+        #}
+
+        if($arguments['occupationalField']) {
+            $constraints[] = $query->equals('occupationalField.uid', $arguments['occupationalField']);
+        }
+
+        if($arguments['location']) {
+            $constraints[] = $query->equals('location.uid', $arguments['location']);
+        }
+
+        if($arguments['keyword']) {
+            $constraints[] = $query->logicalOr(
+                $query->like('title', '%' . $arguments['keyword'] . '%'),
+                $query->like('headerText', '%' . $arguments['keyword'] . '%'),
+                $query->like('description', '%' . $arguments['keyword'] . '%')
+            );
+        }
+
+        if(count($constraints) > 0) {
+            $constraint = $query->logicalAnd($constraints);
+        }
+
+        return $constraint;
+    }
 }
 ?>

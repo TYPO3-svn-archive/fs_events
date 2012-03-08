@@ -21,4 +21,6 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	)
 );
 
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Freesh Events');
+
 ?>

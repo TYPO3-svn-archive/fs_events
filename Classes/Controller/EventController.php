@@ -56,6 +56,7 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
 	 */
 	public function listAction() {
         #$this->response->addAdditionalHeaderData('<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Js/tx_fsevents_accordion.js" /></script>');
+        $arguments = $this->request->getArguments();
         $configurationManager = $this->configurationManager->getContentObject();
 
         $GLOBALS['TSFE']->additionalHeaderData['tx_fsevents_accordion_map'] = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"> </script>
@@ -88,7 +89,7 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
         // load js for accordion
         $GLOBALS['TSFE']->additionalHeaderData['tx_fsevents_accordion'] = '<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Js/tx_fsevents_accordion.js"></script>';
 
-        $events = $this->eventRepository->findAll();
+        $events = $this->eventRepository->findAll($arguments);
         $this->view->assign('cObjData', $configurationManager->data);
 		$this->view->assign('events', $events);
 	}

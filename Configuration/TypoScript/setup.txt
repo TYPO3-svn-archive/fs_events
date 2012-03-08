@@ -1,33 +1,52 @@
 plugin.tx_fsevents {
-	view {
-		templateRootPath = {$plugin.tx_fsevents.view.templateRootPath}
-		partialRootPath = {$plugin.tx_fsevents.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_fsevents.view.layoutRootPath}
-	}
-	persistence {
-		storagePid = {$plugin.tx_fsevents.persistence.storagePid}
-	}
+    view {
+        templateRootPath = {$plugin.tx_fsevents.view.templateRootPath}
+        partialRootPath = {$plugin.tx_fsevents.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_fsevents.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_fsevents.persistence.storagePid}
+    }
+
+    _LOCAL_LANG {
+        default {
+            read_more = more >>
+        }
+    }
+
+    _CSS_DEFAULT_STYLE (
+        input.f3-form-error {
+    		background-color:#FF9F9F;
+    		border: 1px #FF0000 solid;
+    	}
+
+    	.tx-fs-events table {
+    		border-collapse:separate;
+    		border-spacing:10px;
+    	}
+
+    	.tx-fs-events table th {
+    		font-weight:bold;
+    	}
+
+    	.tx-fs-events table td {
+    		vertical-align:top;
+    	}
+
+        .tx_fsevents_list {}
+        .tx_fsevents_list .clear { clear: both; }
+        .tx_fsevents_list .item {}
+        .tx_fsevents_list .item .col1 { float:left; width: 50px; }
+        .tx_fsevents_list .item .col1 .status { background: #63ff62; padding: 2px; }
+        .tx_fsevents_list .item .col2 { float: left; width: 300px; margin-left: 20px; outline: medium none; }
+        .tx_fsevents_list .item .col2 h3 {}
+        .tx_fsevents_list .item .col2 .title{}
+        .tx_fsevents_list .item .open:hover { cursor: pointer; }
+        .tx_fsevents_list .item .info { margin-left: 70px; }
+        .tx_fsevents_list .item .info .col1 { float: left; width: 300px; }
+        .tx_fsevents_list .item .info .col2 { float: left; width: 200px; }
+        .tx_fsevents_list .item .info {}
+        .tx_fsevents_list .item .info {}
+        .tx_fsevents_list .item .info {}
+    )
 }
-
-plugin.tx_fsevents._CSS_DEFAULT_STYLE (
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	.tx-fs-events table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-fs-events table th {
-		font-weight:bold;
-	}
-
-	.tx-fs-events table td {
-		vertical-align:top;
-	}
-
-
-
-)
