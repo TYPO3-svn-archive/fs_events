@@ -12,37 +12,7 @@ List.html: keep
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-    <h1>Listing for Event</h1>
-
     <f:flashMessages/>
-
-    <table class="tx_fsevents">
-        <tr>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.title"/>
-            </th>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.image"/>
-            </th>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.description"/>
-            </th>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.event_start_date"/>
-            </th>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.event_end_date"/>
-            </th>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.price"/>
-            </th>
-            <th>
-                <f:translate key="tx_fsevents_domain_model_event.ticket_link"/>
-            </th>
-            <th></th>
-            <th></th>
-        </tr>
-    </table>
 
     <div id="tx_fsevents_{cObjData.uid}" class="tx_fsevents_list accordion">
         <f:for each="{events}" as="event">

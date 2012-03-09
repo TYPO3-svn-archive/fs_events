@@ -9,6 +9,12 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 	'Events'
 );
 
+$extensionName = str_replace('_','',$_EXTKEY) . '_' . 'events';
+$pluginSignature = strtolower($extensionName);
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,select_key,pages,recursive';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+t3lib_extMgm::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform.xml');
+
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Events');
 
 			t3lib_extMgm::addLLrefForTCAdescr('tx_fsevents_domain_model_category', 'EXT:fs_events/Resources/Private/Language/locallang_csh_tx_fsevents_domain_model_category.xml');

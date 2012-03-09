@@ -7,7 +7,7 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Events',
 	array(
-		'Event' => 'list, show',
+		'Event' => 'list, next, show',
 		'Category' => 'list, show',
 		'Location' => 'list, show',
 		

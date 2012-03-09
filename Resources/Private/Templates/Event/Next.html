@@ -1,0 +1,35 @@
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Next.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <f:flashMessages/>
+
+    <div id="tx_fsevents_{cObjData.uid}" class="tx_fsevents_next accordion">
+        <f:for each="{events}" as="event">
+            <div id="tx_fsevents_item_{event.uid}" class="item">
+                <div class="col1">
+                    {event.eventStartDate -> f:format.date()}<br/>
+                    <f:if condition="{event.eventEndDate}">
+                        <f:then>- {event.eventEndDate -> f:format.date()}<br/></f:then>
+                    </f:if>
+                    <div class="status">{event.status.title}</div>
+                </div>
+                <div class="col2 open">
+                    <h3>{event.location.city} - {event.location.title}</h3>
+                    <div class="title">{event.title}</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </f:for>
+    </div>
+</f:section>

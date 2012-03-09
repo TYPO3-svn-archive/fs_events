@@ -94,14 +94,27 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
 		$this->view->assign('events', $events);
 	}
 
-	/**
-	 * action show
-	 *
-	 * @param $event
-	 * @return void
-	 */
-	public function showAction(Tx_FsEvents_Domain_Model_Event $event) {
-		$this->view->assign('event', $event);
-	}
+    /**
+     * action next
+     *
+     * @return void
+     */
+    public function nextAction() {
+        $arguments = array();
+        $arguments['startDate'] = time();
+        $events = $this->eventRepository->findAll($arguments,2);
+        $this->view->assign('events', $events);
+    }
+
+
+    /**
+     * action show
+     *
+     * @param $event
+     * @return void
+     */
+    public function showAction(Tx_FsEvents_Domain_Model_Event $event) {
+        $this->view->assign('event', $event);
+    }
 }
 ?>

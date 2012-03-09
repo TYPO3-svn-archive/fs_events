@@ -60,6 +60,15 @@ class Tx_FsEvents_Domain_Repository_EventRepository extends Tx_Extbase_Persisten
         #    $constraints[] = $parentConstraint;
         #}
 
+        if($arguments['startDate']) {
+            //$constraints[] = $query->greaterThanOrEqual();
+        }
+
+
+
+
+
+
         if($arguments['occupationalField']) {
             $constraints[] = $query->equals('occupationalField.uid', $arguments['occupationalField']);
         }
