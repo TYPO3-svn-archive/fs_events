@@ -18,15 +18,17 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <f:for each="{events}" as="event">
             <div id="tx_fsevents_item_{event.uid}" class="item">
                 <div class="col1">
-                    {event.eventStartDate -> f:format.date()}<br/>
+                    <span class="startDate">{event.eventStartDate -> f:format.date()}</span><br/>
                     <f:if condition="{event.eventEndDate}">
-                        <f:then>- {event.eventEndDate -> f:format.date()}<br/></f:then>
+                        <f:then><span class="endDate">- {event.eventEndDate -> f:format.date()}</span><br/></f:then>
                     </f:if>
-                    <div class="status">{event.status.title}</div>
+                    <f:if condition="{event.status}">
+                        <f:then><div class="eventStatus eventStatus_{event.status.uid}">{event.status.title}</div></f:then>
+                    </f:if>
                 </div>
                 <div class="col2 open">
-                    <h3>{event.location.city} - {event.location.title}</h3>
-                    <div class="title">{event.title}</div>
+                    <h3><span class="locationCity">{event.location.city}</span> - <span class="locationTitle">{event.location.title}</span></h3>
+                    <div class="eventTitle">{event.title}</div>
                 </div>
                 <div class="clear"></div>
                 <div class="info">

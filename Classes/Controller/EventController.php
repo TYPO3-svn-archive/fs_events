@@ -101,7 +101,7 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
      */
     public function nextAction() {
         $arguments = array();
-        $arguments['startDate'] = time();
+        $arguments['minDate'] = time();
         $events = $this->eventRepository->findAll($arguments,2);
         $this->view->assign('events', $events);
     }

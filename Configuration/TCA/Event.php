@@ -228,6 +228,9 @@ $TCA['tx_fsevents_domain_model_event'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_fsevents_domain_model_status',
+                'items' => array(
+                    array('LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_event.status.default', 0)
+                ),
 				'minitems' => 0,
 				'maxitems' => 1,
 			),

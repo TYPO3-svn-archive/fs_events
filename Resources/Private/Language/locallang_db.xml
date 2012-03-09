@@ -21,7 +21,8 @@
 			<label index="tx_fsevents_domain_model_event.ticket_link">Ticket Link</label>
 			<label index="tx_fsevents_domain_model_event.category">Category</label>
 			<label index="tx_fsevents_domain_model_event.location">Location</label>
-			<label index="tx_fsevents_domain_model_event.status">Status</label>
+            <label index="tx_fsevents_domain_model_event.status">Status</label>
+            <label index="tx_fsevents_domain_model_event.status.default">Bitte wählen</label>
 
 			<label index="tx_fsevents_domain_model_location">Location</label>
 			<label index="tx_fsevents_domain_model_location.title">Title</label>
