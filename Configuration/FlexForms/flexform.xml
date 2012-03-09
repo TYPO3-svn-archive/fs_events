@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets type="array">
+        <sDEF type="array">
+            <ROOT type="array">
+                <TCEforms type="array">
+                    <sheetTitle>LLL:EXT:fs_events/Resources/Private/Language/locallang_flexforms.xml:flexform.sheets.general</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>LLL:EXT:fs_events/Resources/Private/Language/locallang_flexforms.xml:flexform.general.actionSelection</label>
+                            <!--onChange>reload</onChange-->
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:fs_events/Resources/Private/Language/locallang_flexforms.xml:flexform.general.actionSelection.actionDefault</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:fs_events/Resources/Private/Language/locallang_flexforms.xml:flexform.general.actionSelection.actionList</numIndex>
+                                        <numIndex index="1">Event->list;Event->show</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:fs_events/Resources/Private/Language/locallang_flexforms.xml:flexform.general.actionSelection.actionNext</numIndex>
+                                        <numIndex index="1">Event->next;Event->show</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    <persistence.storagePid type="array">
+                        <TCEforms>
+                            <!--displayCond>FIELD:switchableControllerActions:IN: ,Event->list;Event->show,Event->next;Event->show</displayCond-->
+                            <exclude>1</exclude>
+                            <label>LLL:EXT:fs_events/Resources/Private/Language/locallang_flexforms.xml:flexform.general.storagepid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>0</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </persistence.storagePid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
