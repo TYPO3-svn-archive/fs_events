@@ -165,7 +165,7 @@ $TCA['tx_fsevents_domain_model_location'] = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'double2'
+				'eval' => ''
 			),
 		),
 		'longitude' => array(
@@ -174,7 +174,7 @@ $TCA['tx_fsevents_domain_model_location'] = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'double2,required'
+				'eval' => ''
 			),
 		),
 		'image' => array(

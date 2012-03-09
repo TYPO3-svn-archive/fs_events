@@ -55,7 +55,6 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
 	 * @return void
 	 */
 	public function listAction() {
-        #$this->response->addAdditionalHeaderData('<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Js/tx_fsevents_accordion.js" /></script>');
         $arguments = $this->request->getArguments();
         $configurationManager = $this->configurationManager->getContentObject();
 
@@ -102,6 +101,7 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
     public function nextAction() {
         $arguments = array();
         $arguments['minDate'] = time();
+
         $events = $this->eventRepository->findAll($arguments,2);
         $this->view->assign('events', $events);
     }

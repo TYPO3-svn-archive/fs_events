@@ -1,0 +1,33 @@
+/* Global */
+.tx_fsevents {  }
+.tx_fsevents .clear { clear: both; }
+
+/* List */
+.tx_fsevents_list {}
+.tx_fsevents_list div.item {}
+.tx_fsevents_list .item div.col1 { float:left; width: 50px; }
+.tx_fsevents_list .item .col1 span.startDate {}
+.tx_fsevents_list .item .col1 span.endDate {}
+.tx_fsevents_list .item .col1 div.eventStatus { background: #63ff62; padding: 2px; }
+.tx_fsevents_list .item div.col2 { float: left; width: 300px; margin-left: 20px; outline: medium none; }
+.tx_fsevents_list .item .col2 h3 {}
+.tx_fsevents_list .item .col2 h3 span.locationCity {}
+.tx_fsevents_list .item .col2 h3 span.locationTitle {}
+.tx_fsevents_list .item .col2 div.eventTitle {}
+.tx_fsevents_list .item .open:hover { cursor: pointer; }
+.tx_fsevents_list .item div.info { margin-left: 70px; }
+.tx_fsevents_list .item .info div.col1 { float: left; width: 300px; }
+.tx_fsevents_list .item .info div.col2 { float: left; width: 200px; }
+
+/* Next */
+.tx_fsevents_next {}
+.tx_fsevents_next div.item {}
+.tx_fsevents_next .item div.col1 {}
+.tx_fsevents_next .item .col1 span.startDate {}
+.tx_fsevents_next .item .col1 div.eventStatus {}
+.tx_fsevents_next .item div.col2 {}
+.tx_fsevents_next .item .col2 h3 {}
+.tx_fsevents_next .item .col2 h3 span.locationCity {}
+.tx_fsevents_next .item .col2 h3 span.locationTitle {}
+.tx_fsevents_next .item .col2 div.eventTitle {}
+

@@ -103,8 +103,8 @@ CREATE TABLE tx_fsevents_domain_model_location (
 	zip varchar(255) DEFAULT '' NOT NULL,
 	city varchar(255) DEFAULT '' NOT NULL,
 	country varchar(255) DEFAULT '' NOT NULL,
-	latitude double(11,2) DEFAULT '0.00' NOT NULL,
-	longitude double(11,2) DEFAULT '0.00' NOT NULL,
+	latitude varchar(255) DEFAULT '0.00' NOT NULL,
+	longitude varchar(255) DEFAULT '0.00' NOT NULL,
 	image text NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
