@@ -18,11 +18,29 @@
 			<label index="tx_fsevents_domain_model_event.event_start_date">Event Start Date</label>
 			<label index="tx_fsevents_domain_model_event.event_end_date">Event End Date</label>
 			<label index="tx_fsevents_domain_model_event.price">Price</label>
-			<label index="tx_fsevents_domain_model_event.ticket_link">Ticket Link</label>
+                        <label index="tx_fsevents_domain_model_event.tickets">Tickets</label>
 			<label index="tx_fsevents_domain_model_event.category">Category</label>
 			<label index="tx_fsevents_domain_model_event.location">Location</label>
-            <label index="tx_fsevents_domain_model_event.status">Status</label>
-            <label index="tx_fsevents_domain_model_event.status.default">Bitte wählen</label>
+                        <label index="tx_fsevents_domain_model_event.status">Status</label>
+                        <label index="tx_fsevents_domain_model_event.status.default">Bitte wählen</label>
+
+                        <label index="tx_fsevents_domain_model_tickets">Tickets</label>
+                        <label index="tx_fsevents_domain_model_tickets.title">Title</label>
+                        <label index="tx_fsevents_domain_model_tickets.type.default">please select</label>
+                        <label index="tx_fsevents_domain_model_tickets.type.link_extern">external URL</label>
+                        <label index="tx_fsevents_domain_model_tickets.type.link_intern">internal URL</label>
+                        <label index="tx_fsevents_domain_model_tickets.type.address">Address</label>
+                        <label index="tx_fsevents_domain_model_tickets.type.text">Text</label>
+                        <label index="tx_fsevents_domain_model_tickets.url">Url</label>
+                        <label index="tx_fsevents_domain_model_tickets.tel">Phone</label>
+                        <label index="tx_fsevents_domain_model_tickets.street">Street</label>
+                        <label index="tx_fsevents_domain_model_tickets.zip">ZIP</label>
+                        <label index="tx_fsevents_domain_model_tickets.city">City</label>
+                        <label index="tx_fsevents_domain_model_tickets.country">Country</label>
+                        <label index="tx_fsevents_domain_model_tickets.text">Text</label>
+                        <label index="tx_fsevents_domain_model_tickets.formurl">URL to Form</label>
+                        <label index="tx_fsevents_domain_model_tickets">Tickets</label>
+                        <label index="tx_fsevents_domain_model_tickets">Tickets</label>
 
 			<label index="tx_fsevents_domain_model_location">Location</label>
 			<label index="tx_fsevents_domain_model_location.title">Title</label>

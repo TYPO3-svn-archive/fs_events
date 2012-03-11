@@ -41,9 +41,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
                             <span class="label"><f:translate key="tx_fsevents_domain_model_event.price"/></span>
                             {event.price}
                         </div>
-                        <f:if condition="{event.ticketLink}">
-                            <f:then><div class="infoTickets"><f:link.external uri="{event.ticketLink}" target="_blank">Tickets</f:link.external></div></f:then>
-                        </f:if>
+                        
+                        <f:for each="{event.tickets}" as="ticket">
+                            {ticket.uid},
+                        </f:for>
+
                         <div class="clear"></div>
                         {event.description}
                     </div>

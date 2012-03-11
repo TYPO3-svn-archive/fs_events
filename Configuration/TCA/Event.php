@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_fsevents_domain_model_event'] = array(
 	'ctrl' => $TCA['tx_fsevents_domain_model_event']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image, description, event_start_date, event_end_date, price, ticket_link, category, location, status',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image, description, event_start_date, event_end_date, price, tickets, category, location, status',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, image, description, event_start_date, event_end_date, price, ticket_link, category, location, status,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, image, description, event_start_date, event_end_date, price, tickets, category, location, status,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -167,6 +167,7 @@ $TCA['tx_fsevents_domain_model_event'] = array(
 				'eval' => 'trim'
 			),
 		),
+            /*
 		'ticket_link' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_event.ticket_link',
@@ -174,6 +175,23 @@ $TCA['tx_fsevents_domain_model_event'] = array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
+			),
+		),*/
+                'tickets' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_event.tickets',
+			'config' => array(
+                                'type' => 'inline',
+                                'foreign_table' => 'tx_fsevents_domain_model_tickets',
+                                'foreign_field' => 'event',
+                                'maxitems' => 9999,
+                                'appearance' => array(
+                                        'collabse' => 0,
+                                        'levelLinksPosition' => 'top',
+                                        'showSynchronizationLink' => 1,
+                                        'showPossibleLocalisationRecords' => 1,
+                                        'showAllLocalisationLink' => 1
+                                ),
 			),
 		),
 		'category' => array(
@@ -228,9 +246,9 @@ $TCA['tx_fsevents_domain_model_event'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_fsevents_domain_model_status',
-                'items' => array(
-                    array('LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_event.status.default', 0)
-                ),
+                                'items' => array(
+                                    array('LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_event.status.default', 0)
+                                ),
 				'minitems' => 0,
 				'maxitems' => 1,
 			),

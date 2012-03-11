@@ -202,7 +202,8 @@ CREATE TABLE tx_fsevents_domain_model_tickets (
 
 	item int(11) unsigned DEFAULT '0' NOT NULL,
 
-	type int(11) DEFAULT '0' NOT NULL,
+        title varchar(255) DEFAULT '' NOT NULL,
+	type varchar(255) DEFAULT '' NOT NULL,
 	url varchar(255) DEFAULT '' NOT NULL,
 	tel varchar(255) DEFAULT '' NOT NULL,
 	street varchar(255) DEFAULT '' NOT NULL,
@@ -245,7 +246,7 @@ CREATE TABLE tx_fsevents_domain_model_tickets (
 #
 # Table structure for table 'tx_fsexttest_domain_model_tickets'
 #
-CREATE TABLE tx_fsevents_domain_model_irrefield (
+CREATE TABLE tx_fsevents_domain_model_tickets (
 
 	event  int(11) unsigned DEFAULT '0' NOT NULL,
 

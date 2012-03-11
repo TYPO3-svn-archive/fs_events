@@ -13,7 +13,7 @@
 			<label index="event_start_date.description">eventStartDate</label>
 			<label index="event_end_date.description">eventEndDate</label>
 			<label index="price.description">price</label>
-			<label index="ticket_link.description">ticketLink</label>
+			<label index="tickets.description">tickets</label>
 			<label index="category.description">category</label>
 			<label index="location.description">location</label>
 			<label index="status.description">The event-status</label>
