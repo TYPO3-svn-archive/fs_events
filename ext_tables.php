@@ -129,7 +129,7 @@ t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Events');
 			$TCA['tx_fsevents_domain_model_tickets'] = array(
 				'ctrl' => array(
 					'title'	=> 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets',
-					'label' => 'type',
+					'label' => 'title',
 					'tstamp' => 'tstamp',
 					'crdate' => 'crdate',
 					'cruser_id' => 'cruser_id',
@@ -148,7 +148,7 @@ t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Events');
 					),
 					'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Tickets.php',
 					'requestUpdate' => 'type',
-                                        'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_fsevents_domain_model_tickets.gif'
+                    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_fsevents_domain_model_tickets.gif'
 				),
 			);
 

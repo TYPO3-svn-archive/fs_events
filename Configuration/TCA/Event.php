@@ -177,7 +177,7 @@ $TCA['tx_fsevents_domain_model_event'] = array(
 				'eval' => 'trim'
 			),
 		),*/
-                'tickets' => array(
+        'tickets' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_event.tickets',
 			'config' => array(

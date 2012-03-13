@@ -93,7 +93,7 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
 				),
 			),
 		),
-                'title' => array(
+        'title' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.title',
 			'config' => array(
@@ -119,10 +119,10 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
 				'eval' => ''
 			),
 		),
-		'url' => array(
+		'url_extern' => array(
 			'exclude' => 0,
                         'displayCond' => 'FIELD:type:=:linkExtern',
-			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.url',
+			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.url_extern',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -184,15 +184,16 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
                         'displayCond' => 'FIELD:type:=:text',
 			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.text',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim'
 			),
 		),
-		'formurl' => array(
+		'url_intern' => array(
 			'exclude' => 1,
                         'displayCond' => 'FIELD:type:=:linkIntern',
-			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.formurl',
+			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.url_intern',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
