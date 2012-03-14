@@ -41,7 +41,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                             <span class="label"><f:translate key="tx_fsevents_domain_model_event.price"/></span>
                             {event.price}
                         </div>
-                        
+                        {event.tickets}
                         <f:for each="{event.tickets}" as="ticket">
                             {ticket.uid},
                         </f:for>

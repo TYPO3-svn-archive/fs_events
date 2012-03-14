@@ -164,25 +164,6 @@ class Tx_FsEvents_Domain_Model_Tickets extends Tx_Extbase_DomainObject_AbstractE
     }
 
     /**
-     * Returns the tel
-     *
-     * @return string $tel
-     */
-    public function getTel() {
-        return $this->tel;
-    }
-
-    /**
-     * Sets the tel
-     *
-     * @param string $tel
-     * @return void
-     */
-    public function setTel($tel) {
-        $this->tel = $tel;
-    }
-
-    /**
      * Returns the street
      *
      * @return string $street

@@ -98,12 +98,19 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 	 */
 	protected $location;
 
-	/**
-	 * The event-status
-	 *
-	 * @var Tx_FsEvents_Domain_Model_Status
-	 */
-	protected $status;
+    /**
+     * The event-status
+     *
+     * @var Tx_FsEvents_Domain_Model_Status
+     */
+    protected $status;
+
+    /**
+     * Tickets
+     *
+     * @var Tx_FsEvents_Domain_Model_Tickets
+     */
+    protected $tickets;
 
 	/**
 	 * __construct
@@ -184,25 +191,6 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 	 */
 	public function setPrice($price) {
 		$this->price = $price;
-	}
-
-	/**
-	 * Returns the ticketLink
-	 *
-	 * @return string $ticketLink
-	 */
-	public function getTicketLink() {
-		return $this->ticketLink;
-	}
-
-	/**
-	 * Sets the ticketLink
-	 *
-	 * @param string $ticketLink
-	 * @return void
-	 */
-	public function setTicketLink($ticketLink) {
-		$this->ticketLink = $ticketLink;
 	}
 
 	/**
@@ -300,6 +288,26 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 	public function setStatus($status) {
 		$this->status = $status;
 	}
+
+
+    /**
+     * Returns tickets
+     *
+     * @return Tx_FsEvents_Domain_Model_Tickets $tickets
+     */
+    public function getTickets() {
+        return $this->tickets;
+    }
+
+    /**
+     * Sets tickets
+     *
+     * @param Tx_FsEvents_Domain_Model_Tickets $tickets
+     * @return void
+     */
+    public function setTickets(Tx_FsEvents_Domain_Model_Tickets $tickets) {
+        $this->tickets = $tickets;
+    }
 
 	/**
 	 * Returns the eventStartDate
