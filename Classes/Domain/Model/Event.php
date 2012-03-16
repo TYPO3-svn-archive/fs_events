@@ -108,7 +108,7 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
     /**
      * Tickets
      *
-     * @var Tx_FsEvents_Domain_Model_Tickets
+     * @var Tx_Extbase_Persistence_ObjectStorage<Tx_FsEvents_Domain_Model_Tickets>
      */
     protected $tickets;
 
@@ -172,6 +172,7 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 		 * You may modify the constructor of this class instead
 		 */
 		$this->category = new Tx_Extbase_Persistence_ObjectStorage();
+        $this->tickets = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -290,24 +291,64 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 	}
 
 
+
+
+
+
     /**
-     * Returns tickets
+     * Adds a Ticket
      *
-     * @return Tx_FsEvents_Domain_Model_Tickets $tickets
+     * @param Tx_FsEvents_Domain_Model_Tickets $tickets
+     * @return void
+     */
+    public function addTickets(Tx_FsEvents_Domain_Model_Tickets $tickets) {
+        $this->tickets->attach($tickets);
+    }
+
+    /**
+     * Removes a Ticket
+     *
+     * @param Tx_FsEvents_Domain_Model_Tickets $ticketsToRemove The Ticket to be removed
+     * @return void
+     */
+    public function removeTickets(Tx_FsEvents_Domain_Model_Tickets $ticketsToRemove) {
+        $this->tickets->detach($ticketsToRemove);
+    }
+
+    /**
+     * Returns the tickets
+     *
+     * @return Tx_Extbase_Persistence_ObjectStorage<Tx_FsEvents_Domain_Model_Tickets> $tickets
      */
     public function getTickets() {
         return $this->tickets;
     }
 
     /**
-     * Sets tickets
+     * Sets the tickets
      *
-     * @param Tx_FsEvents_Domain_Model_Tickets $tickets
+     * @param Tx_Extbase_Persistence_ObjectStorage<Tx_FsEvents_Domain_Model_Tickets> $tickets
      * @return void
      */
-    public function setTickets(Tx_FsEvents_Domain_Model_Tickets $tickets) {
+    public function setTickets(Tx_Extbase_Persistence_ObjectStorage $tickets) {
         $this->tickets = $tickets;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * Returns the eventStartDate
