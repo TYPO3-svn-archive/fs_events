@@ -78,13 +78,6 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 	protected $price;
 
 	/**
-	 * ticketLink
-	 *
-	 * @var string
-	 */
-	protected $ticketLink;
-
-	/**
 	 * category
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_FsEvents_Domain_Model_Category>
@@ -166,13 +159,13 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		/**
-		 * Do not modify this method!
-		 * It will be rewritten on each save in the extension builder
-		 * You may modify the constructor of this class instead
-		 */
-		$this->category = new Tx_Extbase_Persistence_ObjectStorage();
-        $this->tickets = new Tx_Extbase_Persistence_ObjectStorage();
+            /**
+             * Do not modify this method!
+             * It will be rewritten on each save in the extension builder
+             * You may modify the constructor of this class instead
+             */
+            $this->category = new Tx_Extbase_Persistence_ObjectStorage();
+            $this->tickets = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -308,17 +301,17 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
     /**
      * Removes a Ticket
      *
-     * @param Tx_FsEvents_Domain_Model_Tickets $ticketsToRemove The Ticket to be removed
+     * @param Tx_FsEvents_Domain_Model_Tickets $tickets The Ticket to be removed
      * @return void
      */
-    public function removeTickets(Tx_FsEvents_Domain_Model_Tickets $ticketsToRemove) {
-        $this->tickets->detach($ticketsToRemove);
+    public function removeTickets(Tx_FsEvents_Domain_Model_Tickets $tickets) {
+        $this->tickets->detach($tickets);
     }
 
     /**
      * Returns the tickets
      *
-     * @return Tx_Extbase_Persistence_ObjectStorage<Tx_FsEvents_Domain_Model_Tickets> $tickets
+     * @return Tx_Extbase_Persistence_ObjectStorage $tickets
      */
     public function getTickets() {
         return $this->tickets;
@@ -327,7 +320,7 @@ class Tx_FsEvents_Domain_Model_Event extends Tx_Extbase_DomainObject_AbstractEnt
     /**
      * Sets the tickets
      *
-     * @param Tx_Extbase_Persistence_ObjectStorage<Tx_FsEvents_Domain_Model_Tickets> $tickets
+     * @param Tx_Extbase_Persistence_ObjectStorage $tickets
      * @return void
      */
     public function setTickets(Tx_Extbase_Persistence_ObjectStorage $tickets) {
