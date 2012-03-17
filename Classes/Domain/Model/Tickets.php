@@ -105,6 +105,43 @@ class Tx_FsEvents_Domain_Model_Tickets extends Tx_Extbase_DomainObject_AbstractE
      */
     protected $text;
 
+    /**
+     * get title
+     *
+     * @return string $title
+     */
+    public function getTitle() {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     * @return void
+     */
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+    
+    /**
+     * get type
+     *
+     * @return string $type
+     */
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * Sets the type
+     *
+     * @param string $type
+     * @return void
+     */
+    public function setType($type) {
+        $this->type = $type;
+    }
 
     /**
      * get urlExternal

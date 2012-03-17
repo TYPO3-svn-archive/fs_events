@@ -13,7 +13,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:section name="main">
     <f:flashMessages/>
-
     <div id="tx_fsevents_{cObjData.uid}" class="tx_fsevents_list accordion">
         <f:for each="{events}" as="event">
             <div id="tx_fsevents_item_{event.uid}" class="item">
@@ -41,9 +40,27 @@ Otherwise your changes will be overwritten the next time you save the extension 
                             <span class="label"><f:translate key="tx_fsevents_domain_model_event.price"/></span>
                             {event.price}
                         </div>
-
                         <f:for each="{event.tickets}" as="ticket">
-                            test
+                            <f:alias map="{linkExtern: 'linkExtern'}">
+                                <f:if condition="{ticket.type} == {linkExtern}">
+                                    1-{ticket.title}
+                                </f:if>
+                            </f:alias>
+                            <f:alias map="{linkIntern: 'linkIntern'}">
+                                <f:if condition="{ticket.type} == {linkIntern}">
+                                    2-{ticket.title}
+                                </f:if>
+                            </f:alias>
+                            <f:alias map="{address: 'address'}">
+                                <f:if condition="{ticket.type} == {address}">
+                                    3-{ticket.title}
+                                </f:if>
+                            </f:alias>
+                            <f:alias map="{text: 'text'}">
+                                <f:if condition="{ticket.type} == {text}">
+                                    4-{ticket.title}
+                                </f:if>
+                            </f:alias>
                         </f:for>
 
                         <div class="clear"></div>

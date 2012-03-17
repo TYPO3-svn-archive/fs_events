@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_fsevents_domain_model_tickets'] = array(
 	'ctrl' => $TCA['tx_fsevents_domain_model_tickets']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, type, url, tel, street, zip, city, country, text, formurl',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, type, url_extern, url_intern, tel, street, zip, city, country, text, formurl',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, type, url, tel, street, zip, city, country, text, formurl,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, type, url_extern, url_intern, tel, street, zip, city, country, text, formurl,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -93,13 +93,13 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
 				),
 			),
 		),
-        'title' => array(
+                'title' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'trim,required'
 			),
 		),
 		'type' => array(
@@ -116,7 +116,7 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
 				),
 				//'size' => 1,
 				//'maxitems' => 1,
-				'eval' => ''
+				'eval' => 'required'
 			),
 		),
 		'url_extern' => array(
@@ -184,10 +184,10 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
                         'displayCond' => 'FIELD:type:=:text',
 			'label' => 'LLL:EXT:fs_events/Resources/Private/Language/locallang_db.xml:tx_fsevents_domain_model_tickets.text',
 			'config' => array(
-                'type' => 'text',
-                'cols' => 40,
-                'rows' => 15,
-                'eval' => 'trim'
+                                'type' => 'text',
+                                'cols' => 40,
+                                'rows' => 15,
+                                'eval' => 'trim'
 			),
 		),
 		'url_intern' => array(
@@ -200,7 +200,7 @@ $TCA['tx_fsevents_domain_model_tickets'] = array(
 				'eval' => 'trim'
 			),
 		),
-		'item' => array(
+		'event' => array(
 			'config' => array(
 				'type' => 'passthrough',
 			),
