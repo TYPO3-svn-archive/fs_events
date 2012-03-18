@@ -43,22 +43,32 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <f:for each="{event.tickets}" as="ticket">
                             <f:alias map="{linkExtern: 'linkExtern'}">
                                 <f:if condition="{ticket.type} == {linkExtern}">
-                                    1-{ticket.title}
+                                    <f:link.external uri="{ticket.urlExtern}" target="_blank" >{ticket.title}</f:link.external>
                                 </f:if>
                             </f:alias>
                             <f:alias map="{linkIntern: 'linkIntern'}">
                                 <f:if condition="{ticket.type} == {linkIntern}">
-                                    2-{ticket.title}
+                                    <f:link.page pageUid="{ticlet.urlIntern}">{ticket.title}</f:link.page>
                                 </f:if>
                             </f:alias>
                             <f:alias map="{address: 'address'}">
                                 <f:if condition="{ticket.type} == {address}">
-                                    3-{ticket.title}
+                                    <a href="">{ticket.title}</a>
+                                    <div class="ticket-address-info">
+                                        <span>{ticket.tel}</span>
+                                        <span>{ticket.street}</span>
+                                        <span>{ticket.zip}</span>
+                                        <span>{ticlet.city}</span>
+                                        <span>{ticket.country}</span>
+                                    </div>
                                 </f:if>
                             </f:alias>
                             <f:alias map="{text: 'text'}">
                                 <f:if condition="{ticket.type} == {text}">
-                                    4-{ticket.title}
+                                    <a href="">{ticket.title}</a>
+                                    <div class="ticket-text-info">
+                                        <span>{ticket.text}</span>
+                                    </div>
                                 </f:if>
                             </f:alias>
                         </f:for>
