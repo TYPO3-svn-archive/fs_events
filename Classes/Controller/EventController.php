@@ -61,13 +61,15 @@ class Tx_FsEvents_Controller_EventController extends Tx_Extbase_MVC_Controller_A
         $GLOBALS['TSFE']->additionalHeaderData['tx_fsevents_accordion_map'] = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"> </script>
 
         <script type="text/javascript">
-          function initialize(elementId) {
-            var latlng = new google.maps.LatLng(-34.397, 150.644);
+          function initialize(elementId,coordinates) {
+            var coordinatesArr = coordinates.split(",");
+            var latlng = new google.maps.LatLng(coordinatesArr[0], coordinatesArr[1]);
             var myOptions = {
               zoom: 8,
               center: latlng,
               mapTypeId: google.maps.MapTypeId.ROADMAP
             };
+
             eval("if(typeof "+elementId+"_obj == \'undefined\') { " +
              "var "+elementId+"_obj = new google.maps.Map(document.getElementById(elementId), myOptions);" +
              " console.log(\'erstellt :)\');" +

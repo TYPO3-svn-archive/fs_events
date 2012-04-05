@@ -17,7 +17,12 @@
 			<label index="tx_fsevents_domain_model_event.event_start_date">eventStartDate</label>
 			<label index="tx_fsevents_domain_model_event.event_end_date">eventEndDate</label>
 			<label index="tx_fsevents_domain_model_event.price">price</label>
-			<label index="tx_fsevents_domain_model_event.ticket_link">ticketLink</label>
+            <label index="tx_fsevents_domain_model_event.ticket">ticket</label>
+            <label index="tx_fsevents_domain_model_event.ticket.address.tel">tel:</label>
+            <label index="tx_fsevents_domain_model_event.ticket.address.street">street/No.:</label>
+            <label index="tx_fsevents_domain_model_event.ticket.address.zip">zip:</label>
+            <label index="tx_fsevents_domain_model_event.ticket.address.city">city</label>
+            <label index="tx_fsevents_domain_model_event.ticket.address.country">country</label>
 			<label index="tx_fsevents_domain_model_event.category">category</label>
 			<label index="tx_fsevents_domain_model_event.location">location</label>
 			<label index="tx_fsevents_domain_model_event.status">The event-status</label>

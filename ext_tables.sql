@@ -207,7 +207,7 @@ CREATE TABLE tx_fsevents_domain_model_tickets (
 	url_intern varchar(255) DEFAULT '' NOT NULL,
 	tel varchar(255) DEFAULT '' NOT NULL,
 	street varchar(255) DEFAULT '' NOT NULL,
-	zip int(11) DEFAULT '0' NOT NULL,
+	zip int(11) DEFAULT '' NOT NULL,
 	city varchar(255) DEFAULT '' NOT NULL,
 	country varchar(255) DEFAULT '' NOT NULL,
 	text varchar(255) DEFAULT '' NOT NULL,

@@ -17,12 +17,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <f:for each="{events}" as="event">
             <div id="tx_fsevents_item_{event.uid}" class="item">
                 <div class="col1">
-                    <span class="startDate">{event.eventStartDate -> f:format.date()}</span><br/>
+                    <span class="startDate"><f:format.date format="d.m.">{event.eventStartDate}</f:format.date></span><br/>
                     <f:if condition="{event.eventEndDate}">
-                        <f:then><span class="endDate">- {event.eventEndDate -> f:format.date()}</span><br/></f:then>
+                        <f:then><span class="endDate">- <f:format.date format="d.m.">{event.eventStartDate}</f:format.date></span><br/></f:then>
                     </f:if>
                     <f:if condition="{event.status}">
-                        <f:then><div class="eventStatus eventStatus_{event.status.uid}">{event.status.title}</div></f:then>
+                        <f:then>
+                            <div class="eventStatus eventStatus_{event.status.uid}">
+                                <span class="eventStatusTitle eventStatusTitle_{event.status.uid}">{event.status.title}</span>
+                            </div>
+                        </f:then>
                     </f:if>
                 </div>
                 <div class="col2 open">
@@ -43,36 +47,47 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <f:for each="{event.tickets}" as="ticket">
                             <f:alias map="{linkExtern: 'linkExtern'}">
                                 <f:if condition="{ticket.type} == {linkExtern}">
-                                    <f:link.external uri="{ticket.urlExtern}" target="_blank" >{ticket.title}</f:link.external>
+                                    <div class="ticket ticket-urlExtern">
+                                        <f:link.external uri="{ticket.urlExtern}" target="_blank" >{ticket.title}</f:link.external>
+                                    </div>
                                 </f:if>
                             </f:alias>
                             <f:alias map="{linkIntern: 'linkIntern'}">
                                 <f:if condition="{ticket.type} == {linkIntern}">
-                                    <f:link.page pageUid="{ticlet.urlIntern}">{ticket.title}</f:link.page>
+                                    <div class="ticket ticket-urlIntern">
+                                        <f:link.page pageUid="{ticlet.urlIntern}">{ticket.title}</f:link.page>
+                                    </div>
                                 </f:if>
                             </f:alias>
                             <f:alias map="{address: 'address'}">
                                 <f:if condition="{ticket.type} == {address}">
-                                    <a href="">{ticket.title}</a>
-                                    <div class="ticket-address-info">
-                                        <span>{ticket.tel}</span>
-                                        <span>{ticket.street}</span>
-                                        <span>{ticket.zip}</span>
-                                        <span>{ticlet.city}</span>
-                                        <span>{ticket.country}</span>
+                                    <div class="ticket ticket-address ticket-hover">
+                                        <a href="">{ticket.title}</a>
+                                        <div class="ticket-address-info ticket-slideout" style="display: none;">
+                                            <f:if condition="{ticket.street}"><f:then><span class="street">{ticket.street}</span></f:then></f:if>
+                                            <f:if condition="{ticket.zip}"><f:then><span class="zip">-{ticket.zip}-</span></f:then></f:if>
+                                            <f:if condition="{ticket.city}"><f:then><span class="city">{ticlet.city}</span></f:then></f:if>
+                                            <f:if condition="{ticket.country}"><f:then><span class="country">{ticket.country}</span></f:then></f:if>
+                                            <f:if condition="{ticket.tel}"><f:then><span class="label"><f:translate key="tx_fsevents_domain_model_event.ticket.address.tel"/></span><span class="tel">{ticket.tel}</span></f:then></f:if>
+                                        </div>
                                     </div>
                                 </f:if>
                             </f:alias>
                             <f:alias map="{text: 'text'}">
                                 <f:if condition="{ticket.type} == {text}">
-                                    <a href="">{ticket.title}</a>
-                                    <div class="ticket-text-info">
-                                        <span>{ticket.text}</span>
+                                    <div class="ticket ticket-text ticket-hover">
+                                        <a href="">{ticket.title}</a>
+                                        <div class="ticket-text-info ticket-slideout">
+                                            <span>{ticket.text}</span>
+                                        </div>
                                     </div>
                                 </f:if>
                             </f:alias>
-                        </f:for>
 
+                        </f:for>
+                        <f:if condition="event.tickets">
+                            <f:then><div class="clear"></div></f:then>
+                        </f:if>
                         <div class="clear"></div>
                         {event.description}
                     </div>
@@ -85,7 +100,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <div class="clear"></div>
                         {event.location.latitude} -
                         {event.location.longitude}
-                        <div id="tx_fsevents_map_{event.uid}" class="map_canvas" style="width:100%; height:100px"></div>
+                        <div id="tx_fsevents_map_{event.uid}" class="map_canvas" style="width:100%; height:100px" rel="{event.location.latitude},{event.location.longitude}"></div>
                     </div>
                     <div class="clear"></div>
                 </div>

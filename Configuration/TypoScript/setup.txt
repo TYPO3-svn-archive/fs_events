@@ -33,20 +33,37 @@ plugin.tx_fsevents {
     		vertical-align:top;
     	}
 
+        .tx-fs-events {  }
+
+        .tx-fs-events .clear { clear: both; width: 0; height: 0; margin: 0; padding: 0; border: 0; font-size: 0; }
+
         .tx_fsevents_list {}
-        .tx_fsevents_list .clear { clear: both; }
-        .tx_fsevents_list .item {}
-        .tx_fsevents_list .item .col1 { float:left; width: 50px; }
-        .tx_fsevents_list .item .col1 .status { background: #63ff62; padding: 2px; }
-        .tx_fsevents_list .item .col2 { float: left; width: 300px; margin-left: 20px; outline: medium none; }
-        .tx_fsevents_list .item .col2 h3 {}
+        .tx_fsevents_list .item { margin: 0 0 30px 0; }
+        .tx_fsevents_list .item .col1 { float:left; width: 60px; }
+        .tx_fsevents_list .item .startDate { font-weight: bold; font-size: 14px; }
+        .tx_fsevents_list .item .eventStatus { margin: 3px 0; }
+        .tx_fsevents_list .item .eventStatus span.eventStatusTitle { background: #eeeeee; padding: 1px 2px; }
+        .tx_fsevents_list .item .col2 { float: left; width: 300px; margin-left: 10px; outline: medium none; }
+        .tx_fsevents_list .item .col2 h3 { font-size: 14px; font-weight: bold; }
         .tx_fsevents_list .item .col2 .title{}
         .tx_fsevents_list .item .open:hover { cursor: pointer; }
-        .tx_fsevents_list .item .info { margin-left: 70px; }
+        .tx_fsevents_list .item .info { margin-left: 70px; padding: 10px 0 0 0; }
         .tx_fsevents_list .item .info .col1 { float: left; width: 300px; }
+        .tx_fsevents_list .item .info .ticket { float:left; margin-right: 5px; }
+        .tx_fsevents_list .item .info .ticket-slideout { position: absolute; top: 13px; left: 0; background: #ffffff; width: 200px; height: auto; padding: 5px; border: 1px solid #eeeeee; }
+        .tx_fsevents_list .item .info .ticket-hover { position:relative; }
+        .tx_fsevents_list .item .info .ticket span.label { display: inline-block; margin: 0 5px 0 0; }
+        .tx_fsevents_list .item .info .col1 {}
+        .tx_fsevents_list .item .info .col1 {}
         .tx_fsevents_list .item .info .col2 { float: left; width: 200px; }
-        .tx_fsevents_list .item .info {}
-        .tx_fsevents_list .item .info {}
-        .tx_fsevents_list .item .info {}
+
+        .tx_fsevents_next .item { margin: 0 0 15px 0; }
+        .tx_fsevents_next .item .col1 { float: left; width: 70px; font-size: 11px; }
+        .tx_fsevents_next .item .col1 span.startDate { font-size: 11px; }
+        .tx_fsevents_next .item .col1 {}
+        .tx_fsevents_next .item .col1 {}
+        .tx_fsevents_next .item .col2 { float: left; width: 230px; font-size: 11px; }
+        .tx_fsevents_next .item .col2 .locationCity { font-weight: bold; }
+        .tx_fsevents_next .item .col2 .locationTitle {}
     )
 }

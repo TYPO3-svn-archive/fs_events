@@ -1,33 +1,34 @@
 
-$(document).ready(function () {
-    $('.accordion .info').css('display','none');
+jQuery(document).ready(function () {
+    jQuery('.accordion .info').css('display','none');
 
-    $('div.accordion .open').click(function() {
-        $(this).css('outline','none');
-        if($(this).parent().hasClass('current')) {
-            $(this).nextAll('.info').slideUp('slow',function() {
-                $(this).parent().removeClass('current');
-                var mapId = $(this).parent().find('.map_canvas').attr('id');
-                $('#'+ mapId + ' > div').hide('slow');
+    jQuery('div.accordion .open').click(function() {
+        jQuery(this).css('outline','none');
+        if(jQuery(this).parent().hasClass('current')) {
+            jQuery(this).nextAll('.info').slideUp('slow',function() {
+                jQuery(this).parent().removeClass('current');
+                var mapId = jQuery(this).parent().find('.map_canvas').attr('id');
+                jQuery('#'+ mapId + ' > div').hide('slow');
                 //alert('test1');
                 //$.scrollTo(this,1000);
             });
         } else {
-            $('div.accordion div.current .info').slideUp('slow',function() {
-                $(this).parent().removeClass('current');
-                $(this + '.map_canvas > div').hide('slow');
+            jQuery('div.accordion div.current .info').slideUp('slow',function() {
+                jQuery(this).parent().removeClass('current');
+                jQuery(this + '.map_canvas > div').hide('slow');
                 //$('#'+ mapId +' > div').remove();
                 //alert('test2');
             });
-            $(this).nextAll('.info').slideToggle('slow',function() {
-                $(this).parent().toggleClass('current');
+            jQuery(this).nextAll('.info').slideToggle('slow',function() {
+                jQuery(this).parent().toggleClass('current');
 
-                if($(this).parent().hasClass('current')) {
+                if(jQuery(this).parent().hasClass('current')) {
                     //alert(mapId);
-                    var mapId = $(this).parent().find('.map_canvas').attr('id');
+                    var mapId = jQuery(this).parent().find('.map_canvas').attr('id');
+                    var mapCoordinates = jQuery('#'+mapId).attr('rel');
                     //eval("if("+mapId+"_obj) { alert(); }");
                     //eval("alert();");
-                    initialize(mapId);
+                    //initialize(mapId, mapCoordinates);
                     //alert('test');
                 }
             });
@@ -35,4 +36,12 @@ $(document).ready(function () {
         }
         return false;
     });
+
+    jQuery(".ticket-hover").hover(function(){
+        //alert('test ok');
+        jQuery(this).find('.ticket-slideout').css({visibility: "visible",display: "none"}).slideDown(400);
+    },function(){
+        //alert('test out');
+        jQuery(this).find('.ticket-slideout').stop(true,true).slideUp(400);
+    })
 });
